@@ -21,20 +21,104 @@ for(var j=0;j<excel;j++){
 
 	}
 }
-/*console.log(pass);
+console.log(pass);
 for(var row=0;row<5;row++){
 	console.log("row");
 	for(var col=0;col<10;col++){
 		console.log("col");
 	}
-}*/
-var myTable=document.getElementById("nestedtable");
-for(var i=0;i<10;i++){
-	var row=document.createElement("tr");
-	myTable.append(row);
-	for(var ii=0;ii<10;ii++){
-		var col=document.createElement("td");
-		col.setAttribute("class", "tabledata");
-		row.append(col);
-	}
 }
+
+var arrNum=["1","2","3","4","5","6","7","8","9","10","11","12","13"];
+var arrSpecial=["@","#","$","%","&"];
+	
+	function pass(str){
+
+	var conditionmet=0;
+	if(str.length >=8)
+		conditionmet+=1;
+	for(var i=0;i<arrNum.length;i++){
+		if(str.includes(arrNum[i])){
+			conditionmet +=1;
+			break;
+		}
+	}
+	for(var j=0;j<arrSpecial.length;j++){
+		if(str.includes(arrSpecial[j])){
+ 			conditionmet+=1;
+ 			break;
+		}
+ 	}
+ 		if (conditionmet==3)
+ 			return true;
+ 		else
+ 			return false;
+	
+
+	}
+	var testString="abcd@efgh@ikjl";
+	var testArray=testString.split("@");
+	console.log(testArray);
+	function Splitstring(str,splitAt){
+		var output=[];
+		var lastindex=0;
+		for(var i=0;i<str.length;i++){
+			if(str.charAt(i)==splitAt){
+				var addstring=str.slice(lastindex,i);
+				output.push(addstring);
+				lastindex=i + 1;
+			}
+		}
+		var lastString=str.slice(lastindex,i);
+		if(lastString.length!=0)
+			output.push(lastString);
+		console.log(output);
+
+
+	}Splitstring("catatatatatatutjkytjthadfg","a");
+	function checkEmail(str){
+		str=str.toLowerCase();
+		if (str.charAt(0)=="@")
+        return false;
+		var arr1=str.split("@");
+		if(arr1.length!=2)
+			return false;
+		if(arr1[0].includes("."))
+			return false;
+		if(!arr1[1].includes("."))
+			return false;
+	
+	for(var i=0;i<26;i++){
+		if(str.endsWith(chars[i]))
+			return true;
+	}
+	return false;
+}
+console.log(checkEmail("pematamang@gmail.com"));
+function EmailAlert(){
+	if(checkEmail(document.getElementById("emailEntry").value))
+		alert("good");
+	else
+		alert("Valid email Please");
+}
+function checkPass(){
+	var PassToCheck=document.getElementById("passCheck").value;
+	var condMet=0;
+	if(PassToCheck.length>=8)
+		condMet+=1;
+	for (var i=0;i<arrNum.length;i++){
+		if(PassToCheck.includes(arrNum[i])){
+			condMet+=1;
+			break;
+		}
+	}for (var j=0;j<arrSpecial.length;j++)
+	if(PassToCheck.includes(arrSpecial[j])){
+		condMet +=1;
+		break;
+	}
+
+   if(condMet==3)
+ 			alert("it works")
+ 		else
+ 			alert("NO")
+ 	}
