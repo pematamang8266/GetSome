@@ -122,3 +122,85 @@ function checkPass(){
  		else
  			alert("NO")
  	}
+ 	//Index---
+ 	
+ 	function Indexat(str,char){
+ 		for(var i=0;i<str.length;i++){
+ 			if(str.charAt(i)==char){
+ 		    	console.log(i);
+ 		    	break;
+ 			}
+ 		}
+ 	}
+ 	Indexat("pemaamamamamamamama","a");
+ 	//Include----
+ 	function include(str,char){
+ 		for(var i=0; i<str.length;i++){
+ 		if(str.charAt(i)==char)
+ 			return true;
+ 		
+ 		}
+ 		 	return false;
+
+
+ 	}
+ 	console.log(include("pema","s"));
+ 	//Slice----
+ 	function SliceString(str, start, stop){
+ 		var word="";
+ 		for(var i=start;i<=stop;i++){
+ 			word+=str[i];
+ 		}
+ 		console.log(word);
+
+ 	}
+ 	SliceString("apple",1,4);
+ 	//Replace---
+ 	function Replace(str,index, newchar){
+ 		var string1=str.slice(0, index);
+ 		var string2=str.slice(index+1,  str.length);
+ 		console.log(string1+ newchar +string2);
+
+ 	}
+Replace("banana",1,"e");
+// modString---
+function modString(val){
+	if (typeof val!="string") {
+		console.log("please use a string");
+		return;
+	}
+	this.val=val,
+	this.modSlice=function(start, stop){
+		var newVal="";
+		for(var i=start;i<=stop;i++){
+			newVal+=this.val[i];
+		}
+
+		this.val=newVal;
+
+     },
+     this.LastIndex=function(char){
+     	for(var i=this.val.length;i>=0;i--){
+     		if(this.val.charAt(i)==char){ 
+     			console.log(i);
+     			break;
+     			
+     	    }
+
+        }
+    },
+    this.countLength=function(){
+    	var count=0;
+    	while(this.val[count]!=undefined){
+    		count++;
+    	}
+    	console.log(count);
+    	
+    } 
+}
+var myString= new modString("This is my string");
+var babycat=new modString("kitten");
+babycat.countLength();
+myString.LastIndex("m");
+myString.modSlice(1,4);
+console.log(myString.val);
