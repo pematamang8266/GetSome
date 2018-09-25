@@ -1,17 +1,27 @@
 .tabledata{
-	width:50px;
-	height:50px;
+	width:5px;
+	height:5px;
 	border: solid 1px black;
-	background-color:black;
+	background-color:tomato;
 
 }
-.tabledata1{
-	width:50px;
-	height:50px;
+.tableData1{
+	width:5px;
+	height:5px;
 	background-color:cyan;
 }
-.tabledata2{
+.tableData2{
 	width:50px;
 	height:50px;
 	background-color:tomato;
+}
+.evendate{
+
+}
+.odddate{
+}
+td{
+	width:5px;
+	height:10px;
+	
 }

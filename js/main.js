@@ -1,6 +1,44 @@
 "use strict";
+$(document).ready(function(){
 //console.log("Wecome To The New Age");
 //console.log(Math.ceil(Math.random()*25));
+var data=[];
+var myTable=document.getElementById("nestedtable");
+for(var i=0;i<25;i++){
+	var row=document.createElement("tr");
+	myTable.append(row);
+	
+	for(var ii=0; ii<23; ii++){
+		var col=document.createElement("td");
+		//Style rules for even rows
+		if(i%2==0){			
+			if(ii%2==0)
+				col.setAttribute("class","tableData1");
+			else
+				col.setAttribute("class","tableData2");
+		}
+		//Style rules for odd rows
+		else{
+			if(ii%2 !=0)
+				col.setAttribute("class" ,"tableData1");
+			else
+				col.setAttribute("class" ,"tableData2");				
+		}
+		data.push(col);
+
+		row.append(col);
+	}
+}
+var tableindex;
+  function randomcolor(){
+  	tableindex=Math.floor(Math.random()*data.length);
+  	var r=Math.floor(Math.random()*256);
+  	var g=Math.floor(Math.random()*256);
+  	var b=Math.floor(Math.random()*256);
+  	data[tableindex].style.backgroundColor="rgb("+r+","+g+","+b+")";
+  	setTimeout(randomcolor,0);
+} randomcolor();
+/*
 var randArr=[];
 for (var i=0;i<10;i++){
 	randArr.push(Math.ceil(Math.random()*101));
@@ -121,7 +159,7 @@ function checkPass(){
  			alert("it works")
  		else
  			alert("NO")
- 	}
+ 	}*/
  	//Index---
  	
  	function Indexat(str,char){
@@ -204,3 +242,57 @@ babycat.countLength();
 myString.LastIndex("m");
 myString.modSlice(1,4);
 console.log(myString.val);
+
+
+$("#margin").click(function(){
+	$("#test").toggle();
+});
+
+
+$(".temp").on("click",function(){
+	alert("you entered P1");
+});
+
+$(".bg-color").click(function(){
+			$(".grandules").css("background-color", "cyan")
+
+});
+var count=0;
+$("#prac").click(function(){
+	if(count%2==0){
+		$("#currentdate").append("<p  class='odddate'>" + new Date()+ "</p>");
+	}
+	else
+	$("#currentdate").append("<p class='evendate'>" + new Date() + "</p>");
+	count++;
+
+});
+$("#try").click(function(){
+	addDate();
+});
+
+function addDate(){
+	if(count%10==0){
+	$("#currentdate").empty();
+}
+var r= Math.floor(Math.random() *256);
+var g= Math.floor(Math.random() *256);
+var b= Math.floor(Math.random() *256);
+
+	if(count%2==0)
+	$("#currentdate").append("<p class='odddate' style= 'background-color:rgb(" + r +  ","+ g+ ","+ b + ")'>" + new Date()+ "</p>");
+	
+	else
+	$("#currentdate").append("<p class='evendate' style= 'background-color:rgb(" + r +  ","+ g + ","+ b + ")'>" + new Date() + "</p>");
+	
+	count++;
+	console.log("hi recursively");
+	setTimeout(addDate,1000);
+}
+
+
+
+
+
+
+});
