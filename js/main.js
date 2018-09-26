@@ -316,8 +316,7 @@ $("input").dblclick(function(){
 var str = this;
 var arr = str.split("")
 var jumbled = ""
-console.log(arr)
-console.log(this)
+//console.log(arrgconsole.log(this)
 while (arr.length > 0)
 {
 var random = Math.floor(Math.random() * arr.length)
@@ -357,4 +356,24 @@ $(".para").css("background-color", "rgba(0, 0, 0, 0)")
 
 
 });
-	
+ function RandomGenerator(){
+ 	var arr=[];
+ 	var randNum=Math.floor(Math.random() * 20) + 1;
+ console.log(randNum) ;
+ var count= 1;
+ var Personguess=window.prompt(" guess a number between 1 and 20");
+ if(Personguess == randNum){
+ 	alert("Correct Guess:You're great");
+ } while(Personguess< randNum){
+ 	alert("too low");
+ 	Personguess=window.prompt("Guess a number between 1 and 20");
+ 	count++;
+ }
+ while(Personguess>randNum){
+ 	alert("too high");
+ 	Personguess=window.prompt("Guess a number between 1 and 20");
+ 	count++;
+ }
+  alert("your guess count:" +count);
+ }
+ RandomGenerator();
