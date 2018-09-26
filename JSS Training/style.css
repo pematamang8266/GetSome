@@ -1,0 +1,58 @@
+/*select element by ID with # */
+body{
+	background-image: url(./img/etihad.jpg);
+	background-repeat: no-repeat;
+}
+#mainHeader{
+	background-color: red;
+	color:black;
+	width:300px;
+	text-align: center;
+	padding: 50px;
+	border: solid green 10px;
+	margin: 80px auto;
+	float:center;
+
+}
+#mainHeader:hover{
+	background-color: green;
+
+}
+.subHeader{
+	background-color:green;
+	margin:0 10px 20px 30px;
+	width:500px;
+	float:left;
+}
+table {
+	border:solid 2px black;
+	margin:100px auto;
+	width:450px;
+	font size:80px;
+
+}
+tr{
+	border:solid 1px black;
+
+}
+td{ 
+border: solid 1px black;
+  }
+  th{
+  	text-align:left;
+  	background: blue;
+  }
+tr:nth-child(even){
+	background-color:black;
+
+}
+tr:nth-child(odd){
+	background-color:green;
+}
+
+#wall{
+	height:250px;
+	width:300px;
+	float:right;
+}
+

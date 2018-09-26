@@ -1,0 +1,88 @@
+/*select element by ID with # */
+body{
+	background-image: url(../img/etihad.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#mainHeader{
+	background-color: red;
+	color:black;
+	width:150px;
+	text-align: center;
+	padding: 25px;
+	border: solid green 10px;
+	margin: 0 auto 40px auto;
+	
+
+}
+#mainHeader:hover{
+	background-color: green;
+
+}
+.subHeader{
+	background-color:green;
+	margin:0 10px 20px 30px;
+	width:500px;
+	float:left;
+}
+table {
+	border:solid 2px black;
+	margin:100px auto;
+	width:450px;
+	font size:80px;
+
+}
+tr{
+	border:solid 1px black;   
+
+}
+td{ 
+border: solid 1px black;
+  }
+  th{
+  	text-align:left;
+  	background: blue;
+  }
+tr:nth-child(even){
+	background-color:black;
+
+}
+tr:nth-child(odd){
+	background-color:green;
+}
+
+
+#headLink{
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+}
+
+img#wallImg{
+	width: 350px;
+	margin: 10px auto;
+}
+
+.dateP{
+	background: tomato;
+	font-size: 50px;
+	margin:0;
+}
+
+#message{
+    display:none;
+	background-color: red;
+	position: absolute;
+	top: 5px;
+	left:40vw;
+	width:200px;
+	text-align: center;
+	padding:10px;
+	border-radius: 50px;
+}
+.dateContainer{
+	top:100px;
+
+}

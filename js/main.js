@@ -1,14 +1,15 @@
 "use strict";
-$(document).ready(function(){
+//$(document).ready(function(){
 //console.log("Wecome To The New Age");
 //console.log(Math.ceil(Math.random()*25));
 var data=[];
+var chars=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"];
 var myTable=document.getElementById("nestedtable");
-for(var i=0;i<25;i++){
+for(var i=0;i<4;i++){
 	var row=document.createElement("tr");
 	myTable.append(row);
 	
-	for(var ii=0; ii<23; ii++){
+	for(var ii=0; ii<4; ii++){
 		var col=document.createElement("td");
 		//Style rules for even rows
 		if(i%2==0){			
@@ -29,7 +30,16 @@ for(var i=0;i<25;i++){
 		row.append(col);
 	}
 }
-var tableindex;
+var dataInd=0;
+var randInd;
+while(chars.length>0){
+	var randInd=Math.floor(Math.random()*chars.length);
+	data[dataInd].innerHTML=chars[randInd];
+	chars.splice(randInd,1);
+	dataInd++;
+}
+
+/*var tableindex;
   function randomcolor(){
   	tableindex=Math.floor(Math.random()*data.length);
   	var r=Math.floor(Math.random()*256);
@@ -37,7 +47,7 @@ var tableindex;
   	var b=Math.floor(Math.random()*256);
   	data[tableindex].style.backgroundColor="rgb("+r+","+g+","+b+")";
   	setTimeout(randomcolor,0);
-} randomcolor();
+} randomcolor();*/
 /*
 var randArr=[];
 for (var i=0;i<10;i++){
@@ -161,7 +171,7 @@ function checkPass(){
  			alert("NO")
  	}*/
  	//Index---
- 	
+ 	/*
  	function Indexat(str,char){
  		for(var i=0;i<str.length;i++){
  			if(str.charAt(i)==char){
@@ -290,9 +300,61 @@ var b= Math.floor(Math.random() *256);
 	setTimeout(addDate,1000);
 }
 
+});*/
+/*
+function randomJumbler(){
+	var char="fish";
+
+}
+*/
+
+$("input").dblclick(function(){
+	alert("you entered input is: " + $("#mesto").val());
+});
+//jumblewords
+ String.prototype.Scramble = function(){
+var str = this;
+var arr = str.split("")
+var jumbled = ""
+console.log(arr)
+console.log(this)
+while (arr.length > 0)
+{
+var random = Math.floor(Math.random() * arr.length)
+jumbled += arr[random];
+arr.splice(random, 1)
+}
+console.log(jumbled);
+}
 
 
+var ourString = "fish";
+ourString.Scramble();
+var newArray = [];
+	
+ // Animate
+ $("#pema").click(function(){
+ 	$("#panel").slideDown(5000);
+ }); 
+ $("#stop").click(function(){
+ 	$("#panel").stop();
+ });
+ 
+$("#same").click(function(){
+	$("div").animate({left:'850px'});
+});
 
+//color change back and forth
+	$("#change").click(function(){
+// console.log($(".paraBg").css("background-color"))
+
+if($(".para").css("background-color") == "rgba(0, 0, 0, 0)" ){
+
+$(".para").css("background-color", "tomato")
+}else{
+$(".para").css("background-color", "rgba(0, 0, 0, 0)")
+}
 
 
 });
+	

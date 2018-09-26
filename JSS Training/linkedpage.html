@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<style>
+		.datePEven{
+			background:black;
+			font-size: 20px;
+			margin:0;
+			color:white;
+			top:50;
+		}
+		.datePOdd{
+			background:yellow;
+			font-size: 20px;
+			margin:0;
+			
+		}
+#message{
+	background-color: red;
+	position: absolute;
+	left:40vw;
+	width:200px;
+	text-align: center;
+	padding:10px;
+	border-radius: 50px;
+    }
+body{ color:red;
+    }
+
+	</style>
+
+
+
+</head>
+<body>
+	<h1  id="clock"></h1>
+	<h1 style= "background-color: blue;">Hello</h1>
+
+
+
+<div id= "container"></div>
+
+
+<div id= "dateContainer"></div>
+<div id="message">
+	<h1>Welcome to our site</h1>
+	<p>Please stay forever</p>
+	<button onclick ="closeMessage()">Close</button>
+</div>
+
+<button onclick= "BiggerNumber()" style="margin:50px;width: 200px;background-color: tomato">Find The Bigger Number</button>
+<script src="./js/dom.js"></script>
+</body>
+
+</html>
