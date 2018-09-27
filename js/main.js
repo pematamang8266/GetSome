@@ -1,8 +1,8 @@
 "use strict";
-//$(document).ready(function(){
+$(document).ready(function(){
 //console.log("Wecome To The New Age");
 //console.log(Math.ceil(Math.random()*25));
-var data=[];
+/*var data=[];
 var chars=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"];
 var myTable=document.getElementById("nestedtable");
 for(var i=0;i<4;i++){
@@ -39,7 +39,7 @@ while(chars.length>0){
 	dataInd++;
 }
 
-/*var tableindex;
+var tableindex;
   function randomcolor(){
   	tableindex=Math.floor(Math.random()*data.length);
   	var r=Math.floor(Math.random()*256);
@@ -75,35 +75,13 @@ for(var row=0;row<5;row++){
 	for(var col=0;col<10;col++){
 		console.log("col");
 	}
-}
+}*/
+var chars=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"];
 
 var arrNum=["1","2","3","4","5","6","7","8","9","10","11","12","13"];
 var arrSpecial=["@","#","$","%","&"];
 	
-	function pass(str){
-
-	var conditionmet=0;
-	if(str.length >=8)
-		conditionmet+=1;
-	for(var i=0;i<arrNum.length;i++){
-		if(str.includes(arrNum[i])){
-			conditionmet +=1;
-			break;
-		}
-	}
-	for(var j=0;j<arrSpecial.length;j++){
-		if(str.includes(arrSpecial[j])){
- 			conditionmet+=1;
- 			break;
-		}
- 	}
- 		if (conditionmet==3)
- 			return true;
- 		else
- 			return false;
 	
-
-	}
 	var testString="abcd@efgh@ikjl";
 	var testArray=testString.split("@");
 	console.log(testArray);
@@ -124,54 +102,8 @@ var arrSpecial=["@","#","$","%","&"];
 
 
 	}Splitstring("catatatatatatutjkytjthadfg","a");
-	function checkEmail(str){
-		str=str.toLowerCase();
-		if (str.charAt(0)=="@")
-        return false;
-		var arr1=str.split("@");
-		if(arr1.length!=2)
-			return false;
-		if(arr1[0].includes("."))
-			return false;
-		if(!arr1[1].includes("."))
-			return false;
-	
-	for(var i=0;i<26;i++){
-		if(str.endsWith(chars[i]))
-			return true;
-	}
-	return false;
-}
-console.log(checkEmail("pematamang@gmail.com"));
-function EmailAlert(){
-	if(checkEmail(document.getElementById("emailEntry").value))
-		alert("good");
-	else
-		alert("Valid email Please");
-}
-function checkPass(){
-	var PassToCheck=document.getElementById("passCheck").value;
-	var condMet=0;
-	if(PassToCheck.length>=8)
-		condMet+=1;
-	for (var i=0;i<arrNum.length;i++){
-		if(PassToCheck.includes(arrNum[i])){
-			condMet+=1;
-			break;
-		}
-	}for (var j=0;j<arrSpecial.length;j++)
-	if(PassToCheck.includes(arrSpecial[j])){
-		condMet +=1;
-		break;
-	}
-
-   if(condMet==3)
- 			alert("it works")
- 		else
- 			alert("NO")
- 	}*/
- 	//Index---
- 	/*
+/* 	//Index---
+ 	
  	function Indexat(str,char){
  		for(var i=0;i<str.length;i++){
  			if(str.charAt(i)==char){
@@ -245,7 +177,7 @@ function modString(val){
     	console.log(count);
     	
     } 
-}
+}/*//*
 var myString= new modString("This is my string");
 var babycat=new modString("kitten");
 babycat.countLength();
@@ -308,7 +240,7 @@ function randomJumbler(){
 }
 */
 
-$("input").dblclick(function(){
+/*$("input").dblclick(function(){
 	alert("you entered input is: " + $("#mesto").val());
 });
 //jumblewords
@@ -316,7 +248,7 @@ $("input").dblclick(function(){
 var str = this;
 var arr = str.split("")
 var jumbled = ""
-//console.log(arrgconsole.log(this)
+console.log(this)
 while (arr.length > 0)
 {
 var random = Math.floor(Math.random() * arr.length)
@@ -354,26 +286,192 @@ $(".para").css("background-color", "tomato")
 $(".para").css("background-color", "rgba(0, 0, 0, 0)")
 }
 
-
-});
+});*/
+/*
  function RandomGenerator(){
  	var arr=[];
- 	var randNum=Math.floor(Math.random() * 20) + 1;
- console.log(randNum) ;
+ 	var randNum=Math.floor(Math.random()* 20) + 1;
+ console.log(randNum);
  var count= 1;
  var Personguess=window.prompt(" guess a number between 1 and 20");
- if(Personguess == randNum){
- 	alert("Correct Guess:You're great");
- } while(Personguess< randNum){
- 	alert("too low");
- 	Personguess=window.prompt("Guess a number between 1 and 20");
- 	count++;
+ while(Personguess != randNum){
+ 	if(isNaN(Personguess))
+ 		Personguess=window.prompt("Please enter a number");
+ 	if(Personguess==null){
+    return; 	   
+ 	}
+ 	 else if (Personguess<randNum) {
+ 		alert("too low");
+ 		Personguess=window.prompt("Guess a number between 1 and 20");
+ 		count++;
+ 	}
+ 	else if (Personguess>randNum) {
+ 		alert("too high");
+ 		Personguess=window.prompt("guess a number between 1 and 20");
+ 		count++;
+ 	} 
+
  }
- while(Personguess>randNum){
- 	alert("too high");
- 	Personguess=window.prompt("Guess a number between 1 and 20");
- 	count++;
+ 		alert("Your Guess is correct");
+     alert("your guess count:" +count);
+     if(count>=1 &&count<=3){
+     	alert("Great");
+     }else if(count>=3 && count>7){
+     	alert("good");
+     }else{
+     	alert("bad");
+     }
+
+}
+     RandomGenerator();*/
+//Palindrome check
+
+ /*function Palindrome(str){
+ 	var arr=[];
+    var revarr =[];
+    str = str.toLowerCase();
+    for(var i=0;i<str.length;i++){
+    	arr.push(str.charAt(i));
+    }
+    	revarr=arr.reverse();
+    	var str1= revarr.join("");
+    
+    if(str1==str){
+    	return true;
+    }else{
+    	return false;
+    }
+
  }
-  alert("your guess count:" +count);
+console.log(Palindrome("dg")); */
+
+ //Full Form Validation
+ //Email validation
+ ///Firstname
+  function CheckfName(str){
+     	for(var i=0;i<str.length;i++){
+         if(str.length>0){
+         	return true;
+         }else{
+         	return false;
+         }
+     }
+ }console.log(CheckfName("csadg"));
+ //LastName
+  function ChecklName(str){
+    if(str.length>0){
+       return true;
+     }else{
+         return false;
+     }
+     
+ }console.log(ChecklName("csadg"));
+ //Email validation
+	function checkEmail(str){
+		str=str.toLowerCase();
+		if (str.charAt(0)=="@")
+        return false;
+		var arr1=str.split("@");
+		if(arr1.length!=2)
+			return false;
+		if(arr1[0].includes("."))
+			return false;
+		if(!arr1[1].includes("."))
+			return false;
+	
+	for(var i=0;i<26;i++){
+		if(str.endsWith(chars[i]))
+			return true;
+	}
+	return false;
+}
+console.log(checkEmail("pematamang@gmail.com"));
+function EmailAlert(){
+	if(checkEmail(document.getElementById("emailEntry").value))
+		alert("good");
+	else
+		alert("Valid email Please");
+}
+	//Password validation
+	function pass(str){
+
+	var conditionmet=0;
+	if(str.length >=8)
+		conditionmet+=1;
+	for(var i=0;i<arrNum.length;i++){
+		if(str.includes(arrNum[i])){
+			conditionmet +=1;
+			break;
+		}
+	}
+	for(var j=0;j<arrSpecial.length;j++){
+		if(str.includes(arrSpecial[j])){
+ 			conditionmet+=1;
+ 			break;
+		}
+ 	}
+ 		if (conditionmet==3)
+ 			return true;
+ 		else
+ 			return false;
+	
+
+	}
+function checkPass(){
+	var PassToCheck=document.getElementById("passCheck").value;
+	var condMet=0;
+	if(PassToCheck.length>=8)
+		condMet+=1;
+	for (var i=0;i<arrNum.length;i++){
+		if(PassToCheck.includes(arrNum[i])){
+			condMet+=1;
+			break;
+		}
+	}for (var j=0;j<arrSpecial.length;j++)
+	if(PassToCheck.includes(arrSpecial[j])){
+		condMet +=1;
+		break;
+	}
+
+    if(condMet==3)
+		return true
+ 	else
+ 		return false                                                        
+	
+}
+ 
+ 	function CheckPhone(str){
+ 		for(var i=0;i<str.length;i++){
+ 			if(str.length==10){
+ 				return true;
+ 			}else{
+ 				return false;
+ 			}
+ 		}
+ 	}
+     console.log(CheckPhone("123456789"));
+    
+
+     
+  $(document).keyup(function(){
+ 	var fName=false;
+ 	var lName=false;
+ 	var phonenumber=false;
+ 	var email=false;
+ 	var password=false;
+ 	fName=CheckfName($("#fN").val());
+ 	lName=ChecklName($("#lN").val());
+ 	phonenumber=CheckPhone($("#phn").val());
+ 	email= checkEmail($("#emailEntry").val());
+ 	password=checkPass($("passCheck").val());
+
+  if(fName && lName && phonenumber && email && password)
+ {
+ 	$("#hey").removeAttr("disabled");
+ }else{
+ 	$("#hey").attr("disabled","disabled")
  }
- RandomGenerator();
+});
+
+
+ });
