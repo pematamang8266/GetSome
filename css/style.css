@@ -43,3 +43,9 @@ td{
 	border:solid 1px black;
 	border-radius:3px;
 }
+#IDFORM{
+	border:solid 2px black;
+	text-align:center;
+	height:200px;
+	width:270px;
+}
